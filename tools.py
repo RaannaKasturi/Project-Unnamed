@@ -2,6 +2,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import torch
 from llama_cpp import Llama
+from datetime import datetime
 
 def extract_text_from_pdf(pdf_path):
     loader = PyPDFLoader(pdf_path)
@@ -38,3 +39,12 @@ def load_llm_model():
     except Exception as e:
         print(f"Error loading LLM model: {e}")
         raise
+
+def retrieve_doi_id(doi_link):
+    if doi_link.startswith("10."):
+        doi_id = doi_link
+    elif doi_link:
+        doi_id = "10." + doi_link.split("10.")[1]
+    else:
+        doi_id = doi_link
+    return doi_id

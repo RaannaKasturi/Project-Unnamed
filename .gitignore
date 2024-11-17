@@ -1,4 +1,5 @@
-venv/
+unnamed/
 Llama*
 temp_summary.txt
 *ipynb
+__pycache__/

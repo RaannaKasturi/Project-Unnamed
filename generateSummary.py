@@ -1,4 +1,5 @@
 from TempSummary import generate_temp_summary
+import time
 
 def generate_summary(llm, file):
     print("Generating Temporary Summary...")
@@ -43,8 +44,11 @@ def generate_summary(llm, file):
     print(summary)
     return summary, length_of_research_paper
 
-def summarize(llm, file):
-    import time
+def summarize(llm, file, doi_link, title):
+    if not doi_link or not title or not file:
+        return "Please fill in all the fields to summarize the research paper.", "Please fill in all the fields to summarize the research paper."
+    if doi_link == "" or title == "" or file == "":
+        return "Please fill in all the fields to summarize the research paper.", "Please fill in all the fields to summarize the research paper."
     start_time = time.time()
     response, length_of_research_paper = generate_summary(llm, file)
     if "#" not in response:
@@ -71,7 +75,6 @@ def summarize(llm, file):
             summary += "\n\n" + line
         else:
             summary += "\n" + line
-    
     end_time = time.time()
     total_time_taken = end_time - start_time
     total_time_taken_minutes = round(total_time_taken / 60, 3)

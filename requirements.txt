@@ -10,7 +10,9 @@ langchain==0.3.7
 langchain-community==0.3.7
 pypdf==5.1.0
 cmake==3.31.0.1
+openpyxl
 llama-cpp-python # for CPU
+# CMAKE_ARGS="-DGGML_CUDA=on" FORCE_CMAKE=1 pip install llama-cpp-python --force-reinstall --no-cache-dir # for CUDA GPU
 
 # Install llama-cpp-python as follows (Required)
 
