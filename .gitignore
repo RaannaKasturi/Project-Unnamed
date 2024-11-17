@@ -1,0 +1,4 @@
+venv/
+Llama*
+temp_summary.txt
+*ipynb

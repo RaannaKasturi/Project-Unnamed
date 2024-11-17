@@ -1,0 +1,26 @@
+gradio==5.6.0
+torch --extra-index-url https://download.pytorch.org/whl/cu124
+torchvision --extra-index-url https://download.pytorch.org/whl/cu124
+torchaudio --extra-index-url https://download.pytorch.org/whl/cu124
+sumy==0.11.0
+nltk==3.9.1
+transformers==4.46.2
+sentencepiece==0.2.0
+langchain==0.3.7
+langchain-community==0.3.7
+pypdf==5.1.0
+cmake==3.31.0.1
+llama-cpp-python # for CPU
+
+# Install llama-cpp-python as follows (Required)
+
+## for cpu
+# $ pip install llama-cpp-python
+
+## for cuda gpu
+# $ sudo apt install cmake
+# $ sudo apt install gcc-11 g++-11
+# $ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 60 --slave /usr/bin/g++ g++ /usr/bin/g++-11
+# $ gcc --version
+# $ g++ --version
+# $ CMAKE_ARGS="-DGGML_CUDA=on" FORCE_CMAKE=1 pip install llama-cpp-python --force-reinstall --no-cache-dir
