@@ -63,7 +63,6 @@ def summarize(llm, file, doi_link, title):
         response = response.strip()
     if "**" in response:
         response = response.strip()
-        response = response.replace("- **", "### ")
         response = response.replace("**", "")
         response = response.replace("\n\n", "\n")
         response = response.replace("\\n\\n", "\\n")
