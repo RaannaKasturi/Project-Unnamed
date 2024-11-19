@@ -1,0 +1,9 @@
+gradio==5.5.0
+langchain==0.3.7
+langchain-community==0.3.7
+graphviz==0.20.3
+llama-cpp-python==0.3.1
+pypdf==5.1.0
+llama-cpp-agent==0.2.35
+huggingface-hub==0.26.2
+cairosvg==2.7.1
